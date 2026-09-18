@@ -28,6 +28,28 @@ Each package can show:
 
 The result is an agent context boundary that is more inspectable, repeatable, and auditable.
 
+## The Context Flow
+
+The Docker demo shows the public version of the ContextECF flow end to end:
+
+```text
+agent intent
+  -> mode profile
+  -> governed source classes
+  -> assembled context preview
+  -> metadata-only evidence refs
+  -> exclusions and gaps
+  -> stable package hash
+  -> per-run receipt
+  -> MCP delivery
+```
+
+The important idea is that a request is not treated as an open-ended search. It is first shaped by a **mode profile**: a reusable package of intent, source classes, policy expectations, sufficiency rules, output shape, and receipt requirements for a job-to-be-done.
+
+In the synthetic demo, those modes are support, sales, productivity, and netops. In a private deployment, the same pattern can become customer-specific modes such as renewal desk, incident command, executive briefing, field service, architecture review, or developer context.
+
+This is the seed of the broader Mode Toolkit: teams should be able to define, test, and deploy governed context modes instead of wiring every agent directly to every system.
+
 ## Run The Synthetic Demo Locally
 
 The Docker image defaults to synthetic demo mode over stdio for Docker MCP Toolkit compatibility:

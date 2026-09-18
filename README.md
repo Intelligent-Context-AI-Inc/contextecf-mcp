@@ -157,6 +157,7 @@ This is the public, non-IP description of the assembly path. It explains step an
 | Stage                     | Outcome                                                                                             |
 | ------------------------- | --------------------------------------------------------------------------------------------------- |
 | Request intake            | The MCP `context_assemble` call becomes a bounded context intent for the selected use case.         |
+| Mode profile selection    | The intent is matched to an opaque assembly profile for the job-to-be-done.                         |
 | Identity and policy check | The package is scoped to the persona, assembly profile, request window, and allowed source classes. |
 | Source selection          | Only relevant enterprise source categories are selected before assembly begins.                     |
 | Evidence assembly         | Authorized signals become evidence references instead of raw database or document dumps.            |
@@ -164,6 +165,8 @@ This is the public, non-IP description of the assembly path. It explains step an
 | Exclusion annotation      | Denied or irrelevant sources are listed with reason codes before the model can use them.            |
 | Receipt generation        | The package carries a receipt-style proof artifact for provenance and tamper checks.                |
 | MCP delivery              | The agent receives a schema-valid ContextPackage through the standardized MCP response.             |
+
+The Docker demo uses four visible synthetic mode profiles: support, sales, productivity, and netops. The broader private-deployment pattern is that enterprises can define governed modes for repeatable jobs-to-be-done, then expose those modes through the same MCP tool contract instead of connecting every agent directly to every source system.
 
 ## Boundary
 
