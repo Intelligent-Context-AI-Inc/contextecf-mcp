@@ -1,0 +1,28 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.enterprisecontextfabric/contextecf-mcp",
+  "title": "ContextECF MCP",
+  "description": "Claude-ready governed context packages for AI agents, without direct database access.",
+  "repository": {
+    "url": "https://github.com/Intelligent-Context-AI-Inc/ContextECF-GITHUB",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.enterprisecontextfabric.com/mcp"
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@intelligentcontext/contextecf-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "runtimeHint": "npx"
+    }
+  ]
+}

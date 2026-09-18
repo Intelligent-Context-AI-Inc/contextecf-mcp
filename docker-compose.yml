@@ -1,0 +1,23 @@
+services:
+  contextecf-mcp:
+    build:
+      context: .
+    image: intelligentcontext/contextecf-mcp:local
+    environment:
+      CONTEXTECF_MCP_DEMO: 'true'
+      CONTEXTECF_MCP_TRANSPORT: http
+      CONTEXTECF_MCP_PORT: '3001'
+      CONTEXTECF_MCP_PATH: /mcp
+    ports:
+      - '127.0.0.1:3001:3001'
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'node',
+          '-e',
+          "fetch('http://127.0.0.1:3001/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 5

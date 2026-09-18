@@ -1,0 +1,38 @@
+{
+  "name": "@intelligentcontext/contextecf-mcp",
+  "version": "0.1.0",
+  "mcpName": "com.enterprisecontextfabric/contextecf-mcp",
+  "description": "Read-only Claude-ready MCP facade for governed ContextECF context packages.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "bin": {
+    "contextecf-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CLAUDE_CONNECTOR.md",
+    "DOCKER.md",
+    "LICENSE",
+    "server.json",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "lint:deps": "node scripts/assert-public-boundaries.mjs",
+    "pack:dry-run": "npm pack --dry-run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.0",
+    "vitest": "^4.1.11"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
